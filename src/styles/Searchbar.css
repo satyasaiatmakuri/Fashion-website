@@ -1,0 +1,19 @@
+.search-bar{
+    background-color: rgb(131, 165, 105);
+    width: 100%;
+}
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    padding-top: 5px;
+}
+input{
+    width: 60%;
+    background-color: transparent;
+    border-style:double;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+    padding-left: 10px;
+}

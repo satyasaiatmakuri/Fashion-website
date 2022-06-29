@@ -1,0 +1,12 @@
+.carousal-top, .carousal-middle {
+    height: 444px;
+    margin: auto;
+}
+
+.carousal-top img, .carousal-middle img{
+    height: 444px;
+}
+
+.carditem-photo{
+    height: 300px;
+}

@@ -1,0 +1,149 @@
+.Nav-bar{
+    height: 100px;
+    background-color:rgb(131, 165, 105);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nav-bar .logo{
+    flex: 40%;
+    height: 100%;
+    display: flex;
+    padding-left: 150px;
+    align-items: center;
+    
+}
+
+.Nav-bar .logo img{
+    width: 70px;
+}
+
+.Nav-bar .menu {
+    height: 100%;
+    display: flex;
+    padding-left: 100px;
+    align-items: center;
+}
+
+.Nav-bar .menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    padding: 6px 16px;   
+    border-radius: 5px;
+}
+
+.Nav-bar .menu a:hover{
+    background: rgb(0, 212, 212);
+}
+
+.Nav-bar .nav-btn{
+    border: none;
+    background-color: transparent;
+    padding: 6px 16px;
+    font-size: 1.1rem;
+    color: white;
+    background: rgb(0,212,212);
+    border-radius: 5px;
+    transition: 0.3s all ease-out;
+}
+
+.Nav-bar .nav-btn:hover{
+    color: rgb(0, 212, 212);
+    background:white;
+}
+
+.toggle-btn{
+    background-color: transparent;
+    border: none;
+}
+
+
+@media only screen and (min-width:650px){
+    .toggle-btn{
+        display: none;
+    }
+    .hiddenLinks{
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width:950px) and (max-width:1300px){
+    .Nav-bar .logo {
+        padding-left: 100px;
+    }
+    .nav-btn{
+        right: 10px;
+    }
+}
+
+@media only screen and (min-width: 650px) and (max-width:950px){
+    .Nav-bar .logo {
+        padding-left: 30px;
+    }
+    .Nav-bar .menu {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width:650px){
+    .Nav-bar .logo {
+        padding-left: 30px;
+    }
+    .Nav-bar .menu a{
+        display: none;
+    }
+
+    .nav-btn{
+        position: absolute;
+    }
+    
+    .toggle-btn{
+        display: block;
+        position: absolute;
+        top:0;
+        right:0;
+        transform:translate(-100%,60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    #close{
+        display: none;
+    }
+}
+
+#open .hidden-items{
+    top: 150px;
+    width: 10rem;
+    position: absolute;
+    list-style: none;
+    text-align: start;
+    /* margin-left: 28%; */
+    right: 0%;
+    z-index: 99999;
+    
+}
+
+#open .hidden-items li{
+    background: rgb(0, 212, 212);
+    cursor: pointer;
+}
+
+#open .hidden-items .hidden-item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+}
+
+#open .hidden-items .hidden-item a:hover{
+    background: rgb(0, 175, 175) ;
+    width: 128px;
+}
+

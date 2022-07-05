@@ -1,12 +1,38 @@
-.carousal-top, .carousal-middle {
+.carousal-top, .carousal-top img{
+    height: 90vh;
+    width: auto;
+} 
+
+.carousal-middle {
     height: 444px;
     margin: auto;
 }
 
-.carousal-top img, .carousal-middle img{
+ .carousal-middle img{
     height: 444px;
 }
 
 .carditem-photo{
     height: 300px;
+}
+
+.offer-banner{
+    background-image: url("../assets/OfferBanner.jpg");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 5% left 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+.offer-banner button{
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: rgb(124,170,198);
+    height: 40px;
+    width: 25%;
 }

@@ -2,15 +2,23 @@ import React from 'react'
 import { Carousel, Card, CardGroup, Button } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import '../styles/Home.css'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 function Home() {
   return (
     <div>
+      <div className='offer-banner'>
+          <h4>Offers here</h4>
+          <h2>Including Exciting Products</h2>
+          <h1>with tempting prizes</h1>
+          <p>Offers are upto 70%</p>
+          <button>Shop here<ArrowRightAltIcon className='arrowRightAltIcon'/></button>
+      </div>
       <Carousel fade controls={false} keyboard={true} pause={false} className='carousal-top'>
         <Carousel.Item className='carousel-item'>
           <Link to="/shop"><img
             className="d-block w-100"
-            src="https://www.kinnevik.com/globalassets/images/3.-our-investments/investments/gfg-2.jpg"
+            src="https://images.pexels.com/photos/1884583/pexels-photo-1884583.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="Shop here"
           /></Link>
           <Carousel.Caption>

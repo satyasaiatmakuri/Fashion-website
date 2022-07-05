@@ -8,7 +8,6 @@ import Shop  from './pages/Shop';
 import Contact  from './pages/Contact';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-
 function App() {
   return (
     <div className="App">

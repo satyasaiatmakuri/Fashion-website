@@ -2,12 +2,25 @@
     background-color: rgb(131, 165, 105);
     width: 100%;
 }
-.search-bar button {
+.search-bar button{
     background-color: transparent;
     border: none;
     padding: 10px;
     padding-top: 5px;
 }
+
+.search-bar a{
+    text-decoration: none;
+}
+
+
+.cart-count{
+    font-size: 14px;
+    font-weight: 700;
+    vertical-align: super;
+    color: white;
+}
+
 input{
     width: 60%;
     background-color: transparent;

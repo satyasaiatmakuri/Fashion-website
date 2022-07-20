@@ -13,22 +13,30 @@ const Navbar=()=>{
 
     return(
         <>
-        <nav className='Nav-bar'>
-            <div className='logo'>
-                <Link to="/"><img className='Logo-image' src={Logo} alt='LP-logo'/></Link>
-            </div>
-            <div className='menu'>
-                <Link to="/">Home</Link>
-                <Link to="/Shop">Shop</Link>
-                <Link to="/About">About</Link>
-                <Link to="/contact">Contact</Link>
-            </div>
-            <button className='nav-btn'>
-                Login/SignUp
-            </button>
-            <button className='toggle-btn' onClick={toggle}>
-                    <ReorderIcon fontSize='large'/>
-            </button>
+        <nav className='Nav-bar p-3'>
+                <div className='row align-items-center'>
+                    <div className='logo col-md-3 col-4'>
+                        <Link to="/"><img className='Logo-image' src={Logo} alt='LP-logo'/></Link>
+                    </div>
+                    <div className='menu col-md-5'>
+                        <Link to="/">Home</Link>
+                        <Link to="/Shop">Shop</Link>
+                        <Link to="/About">About</Link>
+                        <Link to="/contact">Contact</Link>
+                    </div>
+                    <div className='col-md-4 col-4'>
+                        <Link to="/Login">
+                            <button className='nav-btn'>
+                                Login/SignUp
+                            </button>
+                        </Link>
+                    </div>
+                    <div className='toggle-btn-div col-4'>
+                    <button className='toggle-btn' onClick={toggle}>
+                            <ReorderIcon fontSize='large'/>
+                    </button>
+                    </div>
+                </div>
         </nav>
         <div className='hiddenLinks' id={openLink?"open":"close"}>
             <ul className='hidden-items'>

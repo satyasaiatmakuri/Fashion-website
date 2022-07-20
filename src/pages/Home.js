@@ -12,7 +12,7 @@ function Home() {
           <h2>Including Exciting Products</h2>
           <h1>with tempting prizes</h1>
           <p>Offers are upto 70%</p>
-          <button>Shop here<ArrowRightAltIcon className='arrowRightAltIcon'/></button>
+          <Link to="/shop"><Button>Shop here<ArrowRightAltIcon className='arrowRightAltIcon'/></Button></Link>
       </div>
       <Carousel fade controls={false} keyboard={true} pause={false} className='carousal-top'>
         <Carousel.Item className='carousel-item'>
@@ -46,7 +46,7 @@ function Home() {
           /></Link>
         </Carousel.Item>
       </Carousel>
-      <div className='row' >
+      <div className='row gx-0' >
         <div className='col-lg-6 text-center'>
           <Carousel fade controls={false} keyboard={true} pause={false} className='carousal-middle'>
           <Carousel.Item className='carousel-item'>
@@ -95,7 +95,7 @@ function Home() {
                 <Card.Text>
                   Look into for more
                 </Card.Text>
-                <Button variant="info">Buy</Button>
+                <Link to="/Kids"><Button variant="info">Look For More</Button></Link>
               </Card.Body>
             </Card>
             <Card className='carditem'>
@@ -105,7 +105,7 @@ function Home() {
                 <Card.Text>
                   Look into for more
                 </Card.Text>
-                <Button variant='info'>Buy</Button>
+                <Link to="/Jewelery"><Button variant='info'>Look For More</Button></Link>
               </Card.Body>
             </Card>
           </CardGroup>

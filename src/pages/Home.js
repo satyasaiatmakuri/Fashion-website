@@ -12,7 +12,7 @@ function Home() {
           <h2>Including Exciting Products</h2>
           <h1>with tempting prizes</h1>
           <p>Offers are upto 70%</p>
-          <Link to="/shop"><Button>Shop here<ArrowRightAltIcon className='arrowRightAltIcon'/></Button></Link>
+          <Link to="/shop"><Button className='py-2'>Shop here<ArrowRightAltIcon/></Button></Link>
       </div>
       <Carousel fade controls={false} keyboard={true} pause={false} className='carousal-top'>
         <Carousel.Item className='carousel-item'>

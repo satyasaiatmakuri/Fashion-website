@@ -26,7 +26,7 @@ function temp(id){
         return(
             <>
             
-                <div className='col-md-6 align-self-center my-3'>
+                <div className='col-md-6 align-self-center py-4'>
                     <img src={product[0].image} alt={product[0].title} 
                         height="600px" width="100%"/>
                 </div>

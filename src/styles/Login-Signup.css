@@ -1,24 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-  }
-
-label {
-  font-size: 1rem;
+.username-part{
+  border: 1px solid rgb(169, 166, 166);
+  border-radius: 5px;
+  display: flex;
+  transition: .5s;
+}
+.icon{
+  transition: .5s;
+  color: rgb(169, 166, 166);
 }
 
-input.form-control, input.form-control:focus {
-  background: #F0F0FF;
+.field{
+  border: none;
+  width: 100%;
+  padding-left: 10px;
+  color: rgb(169, 166, 166);
 }
 
-.error {
-  position: absolute;
+.field:focus{
+ outline: none;
+}
+
+#change .username-part{
+  border-color: rgb(21, 88, 143);
+}
+
+#change .icon{
+  color: rgb(21, 88, 143);
+}
+
+.error-msg{
   color: red;
-  font-size: .6rem;
 }
 
-/* .formik{
-  border: 1px groove darkgreen;
-  background-color: rgb(227, 248, 241);
-} */
+.forgot-pass{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.forgot-pass a{
+  text-decoration: none;
+}
+
+.submit-btn{
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(94, 94, 245);
+  color: white;
+  border-color: transparent;
+}
+
+.Logo img{
+  height: 50px;
+}
+
+.singup-nav a, .login-nav a{
+  text-decoration: none;
+}

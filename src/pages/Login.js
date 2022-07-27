@@ -1,44 +1,106 @@
-import React from 'react';
-import { Formik, Form } from 'formik';
-import { TextField } from './TextField';
+import React, {useState} from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import {Link} from 'react-router-dom'
+import EmailIcon from '@mui/icons-material/Email';
+import WorkIcon from '@mui/icons-material/Work';
 import '../styles/Login-Signup.css'
-import { Link } from 'react-router-dom';
+// import workruit from '../assets/workruit.jpg'
 
-const SignUp = () => {
-  const validate = Yup.object({
-    email: Yup.string()
-      .email('Username is invalid. Hint: Enter your mail as User Name')
-      .required('Username is required'),
-    password: Yup.string()
-      .min(6, 'Password must be at least 6 charaters')
-      .required('Password is required'),
-  })
+
+function Login() {
+
+    const validate = Yup.object({
+        email: Yup.string()
+          .email('Please enter valid email.')
+          .required('Email is required.'),
+        password: Yup.string()
+          .min(6, 'Please enter valid password')
+          .required('Password is required.'),
+    })
+
+    const [colorstate1, setColorstate1]=useState(false);
+    const [colorstate2, setColorstate2]=useState(false);
+    const colorchange1=()=>{
+        setColorstate1(!colorstate1);
+    }
+    const colorchange2=()=>{
+        setColorstate2(!colorstate2);
+    }
   return (
-    <div className='row my-5'>
-        <div className='col-6 mx-auto formik'>
-            <Formik
-              initialValues={{
-                email: '',
-                password: '',
-              }}
-              validationSchema={validate}
-            >
-                {formik => (
-                <div>
-                  <Form>
-                    <TextField label="User Name" name="email" type="email" />
-                    <TextField label="password" name="password" type="password" />
-                    <Link to='/'><button className="btn btn-success m-3" type="submit">Login</button></Link>
-                    <button className="btn btn-danger m-3 ml-3" type="reset">Reset</button>
-                    <Link to='/SignUp'><button className="btn btn-success m-3" type="submit">Need to register?</button></Link>
-                  </Form>
-                </div>
-                )}        
-            </Formik>
+    <div className='row p-5'>
+        <div className='col-md-5 col-8 mx-auto'>
+        <div className='text-center'>
+        {/* <div className='Logo my-4'>
+            <img src={workruit}></img>
+        </div> */}
+        <div>
+            <h2>Welcome back</h2>
         </div>
-    </div>
-  )
+        <div>
+            <span>sign into your account</span>
+        </div>
+        </div>
+     <Formik
+       initialValues={{ email: '', password: '' }}
+       validationSchema={validate}
+       onSubmit={(values, { setSubmitting }) => {
+         setTimeout(() => {
+           alert(JSON.stringify(values, null, 2));
+           setSubmitting(false);
+         }, 400);
+       }}
+     >
+       {({ isSubmitting }) => (
+         <Form>
+            <div className='my-5'  id={colorstate1?'change':'nochange'}>
+                <div className='username-part p-2'>
+                    <EmailIcon className='icon'/>
+                    <Field 
+                        type="email" 
+                        name="email" 
+                        className='field' 
+                        placeholder='Email address'
+                        onFocus={colorchange1} 
+                        onBlur={colorchange1}/>
+                </div>
+                <ErrorMessage name="email" component="div" className='error-msg'/>
+            </div>
+            <div className='my-5'   id={colorstate2?'change':'nochange'}>
+                <div className='username-part p-2'>
+                <WorkIcon className='icon'/>
+                <Field 
+                    type="password" 
+                    name="password"  
+                    className='field' 
+                    placeholder='Password'
+                    onFocus={colorchange2} 
+                    onBlur={colorchange2}/>
+                </div>
+                <ErrorMessage name="password" component="div"  className='error-msg' />
+            </div>
+            <div className='forgot-pass'>
+                <Link to='/'>Forgot password?</Link>
+            </div>
+            <div className='mt-4'>
+            <button type="submit" disabled={isSubmitting} className='submit-btn'>
+              Login
+            </button>
+            </div>
+            <div className='my-4'>
+            <button type="submit" disabled={isSubmitting} className='submit-btn'>
+              Login with OTP
+            </button>
+            </div>
+            <div className='singup-nav text-center mt-5'>
+               Don't have an account <Link to='/Signup'>Sign up</Link>
+            </div>
+         </Form>
+       )}
+     </Formik>
+     </div>
+   </div>
+ );
 }
 
-export default SignUp;
+export default Login

@@ -4,6 +4,7 @@ import { addCart } from '../redux/actions';
 import { valueitems } from '../records/Values';
 import {useParams, Link} from 'react-router-dom';
 import StarIcon from '@mui/icons-material/Star';
+import '../styles/product.css';
 
 function Product() {
     const{id}=useParams();
@@ -15,6 +16,8 @@ function Product() {
         dispatch(addCart(product));
     }
 
+    
+
 function temp(id){
     return(
         valueitems.filter(temp=>id===temp.id)
@@ -22,7 +25,6 @@ function temp(id){
 } 
 
     const ShowProduct=()=>{
-        console.log(product[0]);
         return(
             <>
             
